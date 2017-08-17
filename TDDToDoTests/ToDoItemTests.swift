@@ -43,7 +43,61 @@ class ToDoItemTests: XCTestCase {
         XCTAssertEqual(item.location?.name, location.name, "should set location")
     }
     
+    func test_EqualItems_AreEqual() {
+        let first = ToDoItem(title: "Foo")
+        let second = ToDoItem(title: "Foo")
+        
+        XCTAssertEqual(first, second)
+    }
+    
+    func test_Items_WhenLocationDiffers_AreNotEqual() {
+        let first = ToDoItem(title: "", location: Location(name: "Foo"))
+        let second = ToDoItem(title: "", location: Location(name: "Bar"))
+        
+        XCTAssertNotEqual(first, second)
+    }
+    
+    func test_Items_WhenOneLocationIsNilAndTheOtherIsnt_AreNotEqual() {
+        let first = ToDoItem(title: "", location: Location(name: "Foo"))
+        let second = ToDoItem(title: "", location: nil)
+        
+        XCTAssertNotEqual(first, second)
+    }
+    
+    func test_Items_WhenTimestampsDiffer_AreNotEqual() {
+        let first = ToDoItem(title: "", timestamp: 1.0)
+        let second = ToDoItem(title: "", timestamp: 2.0)
+        
+        XCTAssertNotEqual(first, second)
+    }
+    
+    func test_Items_WhenDescriptionDiffer_AreNotEqual() {
+        let first = ToDoItem(title: "Foo", itemDescription: "Bar")
+        let second = ToDoItem(title: "Foo", itemDescription: "Baz")
+
+        XCTAssertNotEqual(first, second)
+    }
+    
+    func test_Items_WhenTitlesDiffer_AreNotEqual() {
+        let first = ToDoItem(title: "Foo")
+        let second = ToDoItem(title: "Bar")
+        
+        XCTAssertNotEqual(first, second)
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

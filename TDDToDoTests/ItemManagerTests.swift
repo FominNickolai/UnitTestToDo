@@ -72,7 +72,7 @@ class ItemManagerTests: XCTestCase {
         sut.checkItem(at: 0)
         
         let returnedItem = sut.doneItem(at: 0)
-        XCTAssertEqual(returnedItem, item)
+        XCTAssertEqual(returnedItem.title, item.title)
     }
     
 }
