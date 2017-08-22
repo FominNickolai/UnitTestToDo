@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B740626F1F4BFA880075214B /* ItemCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B740626E1F4BFA880075214B /* ItemCellTests.swift */; };
 		B79EED5D1F45894B0028A553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79EED5C1F45894B0028A553 /* AppDelegate.swift */; };
 		B79EED621F45894B0028A553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79EED601F45894B0028A553 /* Main.storyboard */; };
 		B79EED641F45894B0028A553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B79EED631F45894B0028A553 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B740626E1F4BFA880075214B /* ItemCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCellTests.swift; path = Controller/ItemCellTests.swift; sourceTree = "<group>"; };
 		B79EED591F45894B0028A553 /* TDDToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B79EED5C1F45894B0028A553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B79EED611F45894B0028A553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				B79EEDC41F45EEB50028A553 /* ItemListViewControllerTest.swift */,
 				B79EEDCB1F4709130028A553 /* ItemListDataProviderTests.swift */,
+				B740626E1F4BFA880075214B /* ItemCellTests.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B740626F1F4BFA880075214B /* ItemCellTests.swift in Sources */,
 				B79EEDCC1F4709130028A553 /* ItemListDataProviderTests.swift in Sources */,
 				B79EED871F45A0430028A553 /* ItemManagerTests.swift in Sources */,
 				B79EED841F459C450028A553 /* LocationTests.swift in Sources */,

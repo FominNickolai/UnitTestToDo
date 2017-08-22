@@ -82,6 +82,20 @@ extension ItemListDataProvider: UITableViewDelegate {
         
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard let itemManager = itemManager else { return }
+        guard let section = Section(rawValue: indexPath.section) else { return }
+        
+        switch section {
+        case .ToDo:
+            itemManager.checkItem(at: indexPath.row)
+        case .Done:
+            itemManager.uncheckItem(at: indexPath.row)
+        }
+        tableView.reloadData()
+    }
+    
 }
 
 
