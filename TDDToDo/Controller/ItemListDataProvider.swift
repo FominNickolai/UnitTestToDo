@@ -38,9 +38,25 @@ extension ItemListDataProvider: UITableViewDataSource {
         
         return numbersOfRows
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+                            withIdentifier: "ItemCell",
+                            for: indexPath) as! ItemCell
+        
+        guard let itemManager = itemManager else { fatalError() }
+        guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+        
+        let item: ToDoItem
+        switch section {
+        case .ToDo:
+            item = itemManager.item(at: indexPath.row)
+        case .Done:
+            item = itemManager.doneItem(at: indexPath.row)
+        }
+        
+        cell.configureCell(with: item)
         
         return cell
     }
@@ -49,4 +65,37 @@ extension ItemListDataProvider: UITableViewDataSource {
 
 extension ItemListDataProvider: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        
+        guard let section = Section(rawValue: indexPath.section) else { return nil }
+        
+        let buttonTitle: String
+        
+        switch section {
+        case .ToDo:
+            buttonTitle = "Check"
+        case .Done:
+            buttonTitle = "Uncheck"
+        }
+        
+        return buttonTitle
+        
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
